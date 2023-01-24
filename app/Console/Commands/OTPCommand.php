@@ -12,7 +12,7 @@ class OTPCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'otp:send';
+    protected $signature = 'otp:send {to}';
 
     /**
      * The console command description.
@@ -28,7 +28,7 @@ class OTPCommand extends Command
     public function handle()
     {
         $otp = new Otp('https://api.organikhaberlesme.com', env('OTP_KEY'));
-        //$response = $otp->send('4019149202');
+        //$response = $otp->send($this->argument('to'));
         //dd($response);
         $verification = $otp->verify('4019149202', '898957');
         dd($verification);
