@@ -28,7 +28,7 @@ class OTPCommand extends Command
     public function handle()
     {
         $otp = new Otp('https://api.organikhaberlesme.com', env('OTP_KEY'));
-        //$response = $otp->send('905074417663');
+        //$response = $otp->send('4019149202');
         //dd($response);
         $verification = $otp->verify('4019149202', '898957');
         dd($verification);
